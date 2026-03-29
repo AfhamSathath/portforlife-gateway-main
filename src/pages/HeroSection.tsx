@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 import { useRef } from "react";
@@ -67,18 +68,18 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:scale-105 active:scale-95 transition-all duration-300 glow group flex items-center gap-2"
           >
             <span>View My Work</span>
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            to="/contact"
             className="px-8 py-4 rounded-full border border-border text-foreground font-semibold hover:border-primary hover:text-primary transition-all duration-300 hover:bg-primary/5 shadow-sm"
           >
             Get In Touch
-          </a>
+          </Link>
         </motion.div>
 
         {/* Socials */}
@@ -108,21 +109,25 @@ const Hero = () => {
         </motion.div>
 
         {/* Scroll indicator */}
-        <motion.a
-          href="#about"
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors flex flex-col items-center gap-2"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
-          <span className="text-[10px] uppercase tracking-widest font-bold opacity-50">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          <Link
+            to="/about"
+            className="text-muted-foreground hover:text-primary transition-colors flex flex-col items-center gap-2"
           >
-            <ArrowDown size={20} />
-          </motion.div>
-        </motion.a>
+            <span className="text-[10px] uppercase tracking-widest font-bold opacity-50">Scroll</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowDown size={20} />
+            </motion.div>
+          </Link>
+        </motion.div>
       </div>
 
       {/* Decorative Orbs */}

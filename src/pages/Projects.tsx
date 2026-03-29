@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import Layout from "@/components/Layout";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -52,94 +53,96 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding overflow-hidden">
-      <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <p className="text-primary font-bold tracking-widest uppercase text-sm mb-3">
-            My Work
-          </p>
-          <h2 className="text-4xl md:text-6xl font-bold">
-            Featured <span className="text-gradient">Projects</span>
-          </h2>
-        </motion.div>
+    <Layout>
+      <section id="projects" className="section-padding overflow-hidden">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <p className="text-primary font-bold tracking-widest uppercase text-sm mb-3">
+              My Work
+            </p>
+            <h2 className="text-4xl md:text-6xl font-bold">
+              Featured <span className="text-gradient">Projects</span>
+            </h2>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group glass rounded-3xl overflow-hidden hover:glow transition-all duration-500 shadow-2xl border border-white/5"
-            >
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                  width={640}
-                  height={512}
-                />
-                <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
-                  <motion.a
-                    whileHover={{ scale: 1.2, rotate: 360 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-primary text-primary-foreground shadow-2xl"
-                  >
-                    <ExternalLink size={24} />
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.2, rotate: -360 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-full bg-primary text-primary-foreground shadow-2xl"
-                  >
-                    <Github size={24} />
-                  </motion.a>
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 6).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-muted/50 text-muted-foreground border border-white/5 shadow-sm"
+          <div className="grid md:grid-cols-2 gap-10">
+            {projects.map((project, i) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                whileHover={{ y: -10 }}
+                className="group glass rounded-3xl overflow-hidden hover:glow transition-all duration-500 shadow-2xl border border-white/5"
+              >
+                <div className="relative overflow-hidden aspect-video">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                    width={640}
+                    height={512}
+                  />
+                  <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6">
+                    <motion.a
+                      whileHover={{ scale: 1.2, rotate: 360 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 rounded-full bg-primary text-primary-foreground shadow-2xl"
                     >
-                      {tag}
-                    </span>
-                  ))}
-                  {project.tags.length > 6 && (
-                    <span className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 shadow-sm">
-                      +{project.tags.length - 6} more
-                    </span>
-                  )}
+                      <ExternalLink size={24} />
+                    </motion.a>
+                    <motion.a
+                      whileHover={{ scale: 1.2, rotate: -360 }}
+                      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-4 rounded-full bg-primary text-primary-foreground shadow-2xl"
+                    >
+                      <Github size={24} />
+                    </motion.a>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.slice(0, 6).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-muted/50 text-muted-foreground border border-white/5 shadow-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    {project.tags.length > 6 && (
+                      <span className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                        +{project.tags.length - 6} more
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Layout>
   );
 };
 
