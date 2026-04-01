@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 220 14% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 220 14% 12%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 40 85% 55%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 220 12% 18%;
+    --secondary-foreground: 40 20% 85%;
+
+    --muted: 220 10% 16%;
+    --muted-foreground: 220 8% 55%;
+
+    --accent: 40 85% 55%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 40 85% 55%;
+
+    --radius: 0.75rem;
+
+    --hero-gradient: linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(220 18% 12%) 50%, hsl(220 15% 8%) 100%);
+    --card-gradient: linear-gradient(145deg, hsl(220 14% 14%) 0%, hsl(220 14% 10%) 100%);
+    --gold-gradient: linear-gradient(135deg, hsl(40 85% 55%) 0%, hsl(35 90% 45%) 100%);
+    --glow-color: 40 85% 55%;
+
+    --sidebar-background: 220 14% 10%;
+    --sidebar-foreground: 40 20% 85%;
+    --sidebar-primary: 40 85% 55%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 12% 18%;
+    --sidebar-accent-foreground: 40 20% 85%;
+    --sidebar-border: 220 10% 20%;
+    --sidebar-ring: 40 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gold-gradient);
+  }
+
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px hsl(var(--glow-color) / 0.15);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 20px hsl(var(--glow-color) / 0.1);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12 lg:px-20;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
