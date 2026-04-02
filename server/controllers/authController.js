@@ -17,9 +17,9 @@ export const loginWithMagicLink = async (req, res) => {
 
     if (!user) {
       // Create user if they don't exist
-      const role = email === 'afhamsathath2002@gmail.com' ? 'admin' : 'user';
+      const role = email === 'dddummy296@gmail.com' ? 'admin' : 'user';
       user = await User.create({ email, name: email.split('@')[0], role });
-    } else if (email === 'afhamsathath2002@gmail.com' && user.role !== 'admin') {
+    } else if (email === 'dddummy296@gmail.com' && user.role !== 'admin') {
       // Ensure the email always has admin role
       user.role = 'admin';
     }
@@ -42,9 +42,9 @@ export const verifyMagicLink = async (req, res) => {
   const { token } = req.query;
 
   try {
-    const user = await User.findOne({ 
-      magicLinkToken: token, 
-      magicLinkExpires: { $gt: Date.now() } 
+    const user = await User.findOne({
+      magicLinkToken: token,
+      magicLinkExpires: { $gt: Date.now() }
     });
 
     if (!user) {
@@ -70,8 +70,8 @@ export const verifyMagicLink = async (req, res) => {
     user.magicLinkExpires = undefined;
     await user.save();
 
-    res.json({ 
-      success: true, 
+    res.json({
+      success: true,
       message: 'Login successful. You can now close this tab.',
       token: userJwt,
       user: {

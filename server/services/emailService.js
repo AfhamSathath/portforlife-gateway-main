@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 const sendMagicLinkEmail = async (email, token) => {
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.warn('Warning: Email credentials are not configured in .env. Magic link will be logged to console instead.');
-    console.log(`MAGIC LINK FOR ${email}: ${process.env.CLIENT_URL || 'http://localhost:5173'}/auth/verify?token=${token}`);
+    console.log(`MAGIC LINK FOR ${email}: ${process.env.CLIENT_URL || 'http://localhost:8080'}/auth/verify?token=${token}`);
     return;
   }
 
@@ -25,7 +25,7 @@ const sendMagicLinkEmail = async (email, token) => {
         <p>Hello there,</p>
         <p>To access your account, simply click the button below. This link is valid for 15 minutes.</p>
         <div style="text-align: center; margin: 30px 0;">
-          <a href="${process.env.CLIENT_URL || 'http://localhost:5173'}/auth/verify?token=${token}" 
+          <a href="${process.env.CLIENT_URL || 'http://localhost:8080'}/auth/verify?token=${token}" 
              style="background-color: #6366f1; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">
             Log In Now
           </a>
@@ -44,7 +44,7 @@ const sendMagicLinkEmail = async (email, token) => {
   } catch (error) {
     console.error('Error sending magic link email:', error.message);
     // In development, we still want to see the link if email fails
-    console.log(`MAGIC LINK FOR ${email}: ${process.env.CLIENT_URL || 'http://localhost:5173'}/auth/verify?token=${token}`);
+    console.log(`MAGIC LINK FOR ${email}: ${process.env.CLIENT_URL || 'http://localhost:8080'}/auth/verify?token=${token}`);
   }
 };
 

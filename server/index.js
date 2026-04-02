@@ -16,7 +16,7 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: process.env.CLIENT_URL || 'http://localhost:8080',
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -29,7 +29,7 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: process.env.CLIENT_URL || 'http://localhost:8080',
   credentials: true,
 }));
 app.use(helmet());
@@ -59,7 +59,7 @@ app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
   console.error(`ERROR ${statusCode} on ${req.method} ${req.url}:`, err.message);
   if (err.stack) console.error(err.stack);
-  
+
   res.status(statusCode);
   res.json({
     message: err.message,
@@ -70,7 +70,7 @@ app.use((err, req, res, next) => {
 // Socket connection
 io.on('connection', (socket) => {
   console.log('New client connected:', socket.id);
-  
+
   socket.on('join', (userId) => {
     socket.join(userId);
     console.log(`User joined: ${userId}`);

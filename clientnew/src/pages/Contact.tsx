@@ -13,7 +13,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -70,7 +70,7 @@ const Contact = () => {
               </p>
               <div className="space-y-6">
                 {[
-                  { icon: Mail, label: "afhamsathath2002@gmail.com", type: "Email" },
+                  { icon: Mail, label: "dddummy296@gmail.com", type: "Email" },
                   { icon: Phone, label: "+94 75 418 9115", type: "Phone" },
                   { icon: MapPin, label: "Kinniya,Trincomalee,Sri Lanka", type: "Location" },
                 ].map(({ icon: Icon, label, type }, i) => (
