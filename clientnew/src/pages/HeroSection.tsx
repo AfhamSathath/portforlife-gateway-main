@@ -40,7 +40,7 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="text-primary font-medium tracking-widest uppercase text-sm mb-4"
         >
-          Welcome to Afham Sathath's world
+           I am Afham Sathath
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
