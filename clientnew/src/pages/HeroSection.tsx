@@ -56,10 +56,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+          className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
         >
-          Full-stack developer & designer building beautiful, performant web
-          applications that make a lasting impact.
+          Software Engineer specializing in building premium, high-performance web & mobile applications with robust, scalable architectures.
         </motion.p>
 
         <motion.div
