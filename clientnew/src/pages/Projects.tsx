@@ -26,6 +26,7 @@ interface ProjectItem {
   architecture: string[];
   liveUrl: string;
   githubUrl: string;
+  downloadUrl?: string;
 }
 
 const staticProjects: ProjectItem[] = [
@@ -54,6 +55,7 @@ const staticProjects: ProjectItem[] = [
     ],
     liveUrl: "https://doctor-appoinment-iota.vercel.app/",
     githubUrl: "https://github.com/AfhamSathath/doctor-appoinment",
+    downloadUrl: "/doctime.apk",
   },
   {
     title: "Career LK Matchmaker",
@@ -510,7 +512,16 @@ const Projects = () => {
 
               {/* Action Footer */}
               <div className="flex flex-wrap items-center justify-between gap-4 p-6 border-t border-white/5 bg-secondary/20 flex-shrink-0">
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-3">
+                  {selectedProject.downloadUrl && (
+                    <a
+                      href={selectedProject.downloadUrl}
+                      download
+                      className="flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-emerald-500 shadow-lg hover:shadow-emerald-600/20 transition-all"
+                    >
+                      <Smartphone size={14} /> Download APK
+                    </a>
+                  )}
                   <a
                     href={selectedProject.liveUrl}
                     target="_blank"
