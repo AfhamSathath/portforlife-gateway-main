@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 
 const skills = [
+  { name: "Flutter / Dart (Mobile)", level: 90 },
   { name: "React / Next.js", level: 95 },
   { name: "TypeScript", level: 90 },
   { name: "Node.js", level: 85 },
@@ -16,7 +17,7 @@ const skills = [
 ];
 
 const technologies = [
-  "React", "TypeScript", "Node.js", "MySQL", "MongoDB", "php",
+  "Flutter", "Dart", "React", "TypeScript", "Node.js", "MySQL", "MongoDB", "php",
   "Docker", "Figma", "Git", "Tailwind", "Next.js", "Java", "javascript"
 ];
 
