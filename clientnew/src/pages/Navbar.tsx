@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Projects", path: "/projects" },
   { label: "Testimonials", path: "/testimonials" },
   { label: "Contact", path: "/contact" },
-  { label: "Login", path: "/login" },
 ];
 
 const Navbar = () => {

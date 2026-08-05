@@ -9,7 +9,6 @@ import Skills from "./pages/Skills.tsx";
 import Projects from "./pages/Projects.tsx";
 import Testimonials from "./pages/Testimonials.tsx";
 import Contact from "./pages/Contact.tsx";
-import Login from "./pages/Login.tsx";
 import Verify from "./pages/Verify.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -28,7 +27,6 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/auth/verify" element={<Verify />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
