@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+.gitignore
+.env
+.env.local
+.vite
+bun.lock
+bun.lockb
+playwright-report
+test-results

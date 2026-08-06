@@ -77,7 +77,7 @@ const staticProjects: ProjectItem[] = [
       "Backend: Express.js server utilizing MongoDB and Mongoose ODM models",
       "Validation: Runtime schema validations using Zod for rock-solid security"
     ],
-    liveUrl: "https://carrelink-yy4j.vercel.app/",
+    liveUrl: " https://clientnew-chi.vercel.app/",
     githubUrl: "https://github.com/AfhamSathath/final-master-main-Final-",
   },
   {
@@ -244,11 +244,10 @@ const Projects = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveFilter(tab.id)}
-                    className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                      isActive 
-                        ? "text-primary-foreground" 
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
+                    className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
+                      ? "text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                      }`}
                   >
                     {isActive && (
                       <motion.div
@@ -268,7 +267,7 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <motion.div 
+          <motion.div
             layout
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
@@ -383,7 +382,7 @@ const Projects = () => {
               <div className="relative aspect-[21/9] w-full overflow-hidden bg-black/20 border-b border-white/5 flex-shrink-0">
                 <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                
+
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -412,9 +411,8 @@ const Projects = () => {
                   <button
                     key={tab}
                     onClick={() => setModalTab(tab)}
-                    className={`relative py-4 px-4 text-xs font-bold uppercase tracking-widest transition-colors ${
-                      modalTab === tab ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                    }`}
+                    className={`relative py-4 px-4 text-xs font-bold uppercase tracking-widest transition-colors ${modalTab === tab ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                      }`}
                   >
                     {modalTab === tab && (
                       <motion.div
